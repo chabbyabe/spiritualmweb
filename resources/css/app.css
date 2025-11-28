@@ -1,3 +1,80 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+  --white: #ffffff;
+  --text: #2D2D2C;
+  --muted: #6b6b6b;
+  --accent: #b5892b;
+  --accent-600: #99731f;
+  --link: #1e4b75;
+  --card-bg: #faf9f8;
+  --surface: #f5f5f5;
+  --border: #e6e6e6;
+  --max-width: 1100px;
+  --radius: 10px;
+  --footer-bg: #2d2d2d;
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-serif: "Merriweather", Georgia, "Times New Roman", serif;
+
+  --base-font-size: 16px;
+  --line-height: 1.65;
+  --transition: 180ms ease;
+}
+
+main, body {
+    font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text);
+    font-family: var(--font-sans);
+}
+
+p, a {
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-weight: 400;
+}
+
+li > a {
+    font-weight: 500;
+}
+
+mark {
+    background-color: var(--white);
+}
+
+mark > a, mark > em > a {
+    color: var(--link);
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--white)
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

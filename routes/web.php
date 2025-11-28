@@ -5,13 +5,25 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+Route::middleware(['web'])->group(function () {
+    Route::get('/', function () {
+        return Inertia::render('Home/Home', [
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'laravelVersion' => Application::VERSION,
+            'phpVersion' => PHP_VERSION,
+        ]);
+    })->name('home');
+
+    Route::get('/about', function () {
+        return Inertia::render('Home/About');
+    })->name('home.about');
+
+    Route::get('/devotionals/{language}', function ($language = 'en') {
+        return Inertia::render('Home/Devotional', [
+            'language' => $language,
+        ]);
+    })->name('home.devotional');
 });
 
 Route::get('/dashboard', function () {
