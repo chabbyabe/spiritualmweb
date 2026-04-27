@@ -6,16 +6,13 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::middleware(['web'])->group(function () {
-    // Route::get('/', function () {
-    //     return Inertia::render('Home/Home', [
-    //         'canLogin' => Route::has('login'),
-    //         'canRegister' => Route::has('register'),
-    //         'laravelVersion' => Application::VERSION,
-    //         'phpVersion' => PHP_VERSION,
-    //     ]);
-    // })->name('home');
     Route::get('/', function () {
-        return redirect()->away('https://spiritualmaturity.nl/', 301);
+        return Inertia::render('Home/Home', [
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'laravelVersion' => Application::VERSION,
+            'phpVersion' => PHP_VERSION,
+        ]);
     })->name('home');
     Route::get('/about', function () {
         return Inertia::render('Home/About');

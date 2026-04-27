@@ -39,12 +39,6 @@ export default function About() {
                                     We hope that these messages will exhort, edify, encourage and build up you in the knowledge and love
                                     and power of Yeshua HaMashiach (Jesus the Christ or Anointed One)
                                   </p>
-
-                                    <p> Ruurd Sieffers </p>
-
-                                    <p>
-                                        <a href="mailto:info@spiritualmaturity.nl" target="_blank" rel="noreferrer noopener"
-                                        className="underline underline-offset-4 text-primary-500 hover:text-primary-400">info@spiritualmaturity.nl</a></p>
                                 </div>
 
                             </div>
